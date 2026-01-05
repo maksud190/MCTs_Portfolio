@@ -4,7 +4,7 @@ import Comment from "../models/Comment.js";
 import Announcement from "../models/Announcement.js";
 import Category from "../models/Category.js";
 import SiteSettings from "../models/SiteSettings.js";
-import Report from "../models/reportModel.js";
+// import Report from "../models/reportModel.js";
 import Notification from "../models/Notification.js";
 
 // ========================================
@@ -23,12 +23,12 @@ export const getDashboardStats = async (req, res) => {
     const totalComments = await Comment.countDocuments();
     
     // 🔥 Report মডেল যদি না থাকে তাহলে 0 রিটার্ন করুন
-    let pendingReports = 0;
-    try {
-      pendingReports = await Report.countDocuments({ status: "pending" });
-    } catch (error) {
-      console.log("⚠️ Report model not found, using 0");
-    }
+    const pendingReports = 0;
+    // try {
+    //   pendingReports = await Report.countDocuments({ status: "pending" });
+    // } catch (error) {
+    //   console.log("⚠️ Report model not found, using 0");
+    // }
 
     // New this week
     const newUsersWeek = await User.countDocuments({ 

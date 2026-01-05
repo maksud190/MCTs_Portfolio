@@ -134,7 +134,7 @@ app.use("/api/testimonials", testimonialRoutes);
 
 // 🔥 Admin routes - Keep separate or merge
 app.use("/api/admin", adminRoutes);           // Main admin routes
-app.use("/api/admin/forum", adminforumroutes); // Admin forum routes under /api/admin/forum
+app.use("/api/admin/forum", adminforumroutes); // Forum routes
 
 // Test route
 app.get("/", (req, res) => {
