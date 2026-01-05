@@ -5,6 +5,7 @@ import Announcement from "../models/Announcement.js";
 import Category from "../models/Category.js";
 import SiteSettings from "../models/SiteSettings.js";
 import Report from "../models/reportModel.js";
+import Notification from "../models/Notification.js";
 
 // ========================================
 // 📊 DASHBOARD STATS
