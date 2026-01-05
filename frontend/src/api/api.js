@@ -1,11 +1,3 @@
-// import axios from "axios";
-
-// export const API = axios.create({
-//   baseURL: "http://localhost:5000/api",
-// });
-
-
-
 import axios from "axios";
 
 // Use environment variable for API URL, fallback to localhost for development
