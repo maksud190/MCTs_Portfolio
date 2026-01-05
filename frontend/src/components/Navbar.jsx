@@ -45,7 +45,7 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`sticky top-0 z-50 bg-black backdrop-blur-lg !border-0 shadow-sm transition-all duration-300 ${
+      className={`sticky top-0 z-50 bg-white backdrop-blur-lg !border-0 shadow-sm transition-all duration-300 ${
         isScrolled
           ? "lg:mx-70 lg:mt-4 lg:top-3 lg:rounded-full lg:shadow-2xl lg:!bg-white/60 lg:!border-y-1 lg:!border-gray-300"
           : ""

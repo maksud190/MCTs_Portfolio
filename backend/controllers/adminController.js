@@ -21,7 +21,14 @@ export const getDashboardStats = async (req, res) => {
     const totalUsers = await User.countDocuments();
     const totalProjects = await Project.countDocuments();
     const totalComments = await Comment.countDocuments();
-    const pendingReports = await Report.countDocuments({ status: "pending" });
+    
+    // 🔥 Report মডেল যদি না থাকে তাহলে 0 রিটার্ন করুন
+    let pendingReports = 0;
+    try {
+      pendingReports = await Report.countDocuments({ status: "pending" });
+    } catch (error) {
+      console.log("⚠️ Report model not found, using 0");
+    }
 
     // New this week
     const newUsersWeek = await User.countDocuments({ 
@@ -83,6 +90,7 @@ export const getDashboardStats = async (req, res) => {
       userGrowth
     });
   } catch (err) {
+    console.error("❌ Dashboard stats error:", err); // 🔥 Better logging
     res.status(500).json({ message: err.message });
   }
 };
